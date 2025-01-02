@@ -17,8 +17,9 @@
 </p>
 
    Матрица G состоит из единичной матрицы порядка k и G* – проверочной части порождающей матрицы размером k(n–k).
+   n - количество столбцов, k - количество строк.
 
-5. vector<vector<int>> findH(const vector<vector<int>>& G) - Нахождение проверочной матрицы H;
+5. **vector<vector<int>> findH(const vector<vector<int>>& G)** - Нахождение проверочной матрицы H;
 
 <p align="center">
 <img width="150" alt="image" src="https://github.com/user-attachments/assets/d6dd2652-1817-440e-a70d-e4d4be3fd89e" />
@@ -27,7 +28,7 @@
    Связь между проверочной матрицей H и порождающей матрицей G. Знак T обозначает транспонирование, а 0 – нулевая матрица порядка k.
    Проверочная матрица H имеет размеры r*n.
 
-   Если порождающая матрица задана в каноническом виде, то проверочная матрица может быть найдена путем транспонирования подматрицы G и добавления справа единичной матрицы порядка r:
+   Если порождающая матрица задана в каноническом виде, то проверочная матрица может быть найдена путем транспонирования подматрицы G и добавления справа единичной матрицы порядка r = n - k:
 <p align="center">
 <img width="242" alt="image" src="https://github.com/user-attachments/assets/b00f9a5a-bb29-4d09-8742-70648e29b813" />
 </p>
@@ -36,9 +37,14 @@
 7. int hammingDistanceVec(const vector<int>& A, const vector<int>& B) - Нахождение расстояния Хэмминга для матриц A и B;
     Расстоянием Хэмминга d(c1,c2) между двумя векторами c1 и c2 Иназывается вес их разности d(c1,c2) = wt(c1–c2). Например, d(1001, 1011) = wt(0010).
     Видно, что расстояние Хэмминга равно количеству попарно несовпадающих разрядов векторов.
-8. int calculateAllHammingDistances(const vector<vector<int>>& matrix) - Нахождение минимального расстояния Хэмминга между строками матрицы matrix
-17. int codeDistance(const vector<vector<int>>& matrix)
-18. int maxDetectableErrors(const vector<vector<int>>& matrix)
+8. int calculateAllHammingDistances(const vector<vector<int>>& matrix) - Нахождение минимального расстояния Хэмминга между строками матрицы matrix;
+9. int codeDistance(const vector<vector<int>>& matrix) - Нвхождение кодового расстояния для матрицы matrix;
+   для нахождения кодового расстояния необходимо найти минимальный вес строк G и минимальное расстояние Хэмминга между всеми строками G. Тогда кодовое расстояние равно минимальному из этих значений.
+18. int maxDetectableErrors(const vector<vector<int>>& matrix) - Вычисление максимального количества обнаруживаемых ошибок;
+   <p align="center">
+<img width="242" alt="image" src="https://github.com/user-attachments/assets/b00f9a5a-bb29-4d09-8742-70648e29b813" />
+</p>
+
 19. int correctableErrors(const vector<vector<int>>& matrix)
 20. vector<int> codeSyndrome(const vector<int>& word, const vector<vector<int>>& H)
 21. void addRows(vector<int>& dest, const vector<int>& src)
