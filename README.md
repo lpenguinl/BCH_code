@@ -14,6 +14,7 @@
 4. vector<vector<int>> toCanonicalForm(const vector<vector<int>>& originalMatrix) - приводит матрицу originalMatrix к каноническому виду (приведенно-ступенчатой форме);
 
    ![image](https://github.com/user-attachments/assets/3eeafe54-a2d7-4201-b58b-aa47b3c818a0)
+   Матрица G состоит из единичной матрицы порядка k и G* – проверочной части порождающей матрицы размером k*(n–k).
 
 7. vector<vector<int>> findH(const vector<vector<int>>& G)
 8. int findMinWt(const vector<vector<int>>& G)
