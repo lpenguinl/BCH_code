@@ -8,10 +8,10 @@
 Если это возможно, выводится сообщение с исправленными ошибками.
 
 # Описание методов 
-1. vector<vector<int>> matrixMultiply(const vector<vector<int>>& A, const vector<vector<int>>& B) - Возвращает матрицу, которая является результатом умножения матрицы A на матрицу B;
-2. vector<vector<int>> transpose(const vector<vector<int>>& matrix) - Возвращает транспонированную матрицу matrix;
-3. void swapRows(vector<vector<int>>& matrix, int row1, int row2) - меняет строки row1 и row2 местами в матрице matrix;
-4. vector<vector<int>> toCanonicalForm(const vector<vector<int>>& originalMatrix) - приводит матрицу originalMatrix к каноническому виду (приведенно-ступенчатой форме);
+1. **vector<vector<int>> matrixMultiply(const vector<vector<int>>& A, const vector<vector<int>>& B)** - Возвращает матрицу, которая является результатом умножения матрицы A на матрицу B;
+2. **vector<vector<int>> transpose(const vector<vector<int>>& matrix)** - Возвращает транспонированную матрицу matrix;
+3. **void swapRows(vector<vector<int>>& matrix, int row1, int row2)** - меняет строки row1 и row2 местами в матрице matrix;
+4. **vector<vector<int>> toCanonicalForm(const vector<vector<int>>& originalMatrix)** - приводит матрицу originalMatrix к каноническому виду (приведенно-ступенчатой форме);
 <p align="center">
 <img width="150" alt="image" src="https://github.com/user-attachments/assets/474e72da-bb5f-4dec-9253-9beddb7becbb" />
 </p>
