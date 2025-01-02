@@ -42,7 +42,7 @@
    для нахождения кодового расстояния необходимо найти минимальный вес строк G и минимальное расстояние Хэмминга между всеми строками G. Тогда кодовое расстояние равно минимальному из этих значений.
 18. int maxDetectableErrors(const vector<vector<int>>& matrix) - Вычисление максимального количества обнаруживаемых ошибок;
    <p align="center">
-<img width="242" alt="image" src="https://github.com/user-attachments/assets/3bd90ede-b233-4732-bd01-04b1f206a617" />
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/3bd90ede-b233-4732-bd01-04b1f206a617" />
 </p>
 
 19. int correctableErrors(const vector<vector<int>>& matrix)
