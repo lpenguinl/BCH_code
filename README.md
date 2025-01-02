@@ -41,48 +41,49 @@
    Расстоянием Хэмминга d(c1,c2) между двумя векторами c1 и c2 Иназывается вес их разности d(c1,c2) = wt(c1–c2). Например, d(1001, 1011) = wt(0010).
     Видно, что расстояние Хэмминга равно количеству попарно несовпадающих разрядов векторов.
     
-9. **int calculateAllHammingDistances(const vector<vector<int>>& matrix)** - Нахождение минимального расстояния Хэмминга между строками матрицы matrix;
+8. **int calculateAllHammingDistances(const vector<vector<int>>& matrix)** - Нахождение минимального расстояния Хэмминга между строками матрицы matrix;
    
-10. **int codeDistance(const vector<vector<int>>& matrix)** - Нвхождение кодового расстояния для матрицы matrix;
+9. **int codeDistance(const vector<vector<int>>& matrix)** - Нвхождение кодового расстояния для матрицы matrix;
 
     Для нахождения кодового расстояния необходимо найти минимальный вес строк G и минимальное расстояние Хэмминга между всеми строками G. Тогда кодовое расстояние равно минимальному из этих значений.
-11. **int maxDetectableErrors(const vector<vector<int>>& matrix)** - Вычисление максимального количества обнаруживаемых ошибок;
+   
+10. **int maxDetectableErrors(const vector<vector<int>>& matrix)** - Вычисление максимального количества обнаруживаемых ошибок;
 
    Число обнаруживаемых ошибок связано с кодовым расстоянием данной формулой:
    <p align="center">
 <img width="150" alt="image" src="https://github.com/user-attachments/assets/8e0e455a-eeb7-4f45-8ffc-83cb984e2c82" />
 </p>
 
-12. **int correctableErrors(const vector<vector<int>>& matrix)** - Вычисление максимального количества исправляемых ошибок;
+11. **int correctableErrors(const vector<vector<int>>& matrix)** - Вычисление максимального количества исправляемых ошибок;
    
       Число исправляемых ошибок связано с кодовым расстоянием данной формулой:
 <p align="center">
 <img width="150" alt="image" src="https://github.com/user-attachments/assets/3bd90ede-b233-4732-bd01-04b1f206a617" />
 </p>
 
-13. **vector<int> codeSyndrome(const vector<int>& word, const vector<vector<int>>& H)** - Нахождение синдромов кода;
+12. **vector<int> codeSyndrome(const vector<int>& word, const vector<vector<int>>& H)** - Нахождение синдромов кода;
 
    Для обнаружения и исправления ошибок используется синдромный метод декодирования.
    Синдром - Результат умножения принятого кодового слова на транспонированную матрицу H. Если синдром равен нулю, то ошибок нет.
    
-14. **map<vector<int>, vector<int>> findSyndromeLeaders(const vector<vector<int>>& H)** - нахождение лидера для каждого синдрома;
+13. **map<vector<int>, vector<int>> findSyndromeLeaders(const vector<vector<int>>& H)** - нахождение лидера для каждого синдрома;
 
    Класс смежности - множество искаженных кодовых слов, имеющих один и тот же синдром.
    Лидер синдрома - это кодовое слово, имеющее наименьший вес Хэмминга среди всех элементов этого класса. 
    Выбор лидера синдрома позволяет допределить, какая ошибка наиболее вероятно произошла во время передачи.
    
-15. **void multiplyRow(vector<int>& row, int scalar)** - Умножение строки на скаляр по модулю 2;
+14. **void multiplyRow(vector<int>& row, int scalar)** - Умножение строки на скаляр по модулю 2;
     
-16. **vector<int> vectorAddMod2(const vector<int>& A, const vector<int>& B)** - Сложение матриц по модулю 2;
+15. **vector<int> vectorAddMod2(const vector<int>& A, const vector<int>& B)** - Сложение матриц по модулю 2;
     
-17. **vector<vector<int>> fixErrors(vector<vector<int>>& GGot, const vector<vector<int>>& H)** - Исправление ошибок в переданном сообщение GGot;
+16. **vector<vector<int>> fixErrors(vector<vector<int>>& GGot, const vector<vector<int>>& H)** - Исправление ошибок в переданном сообщение GGot;
 
     Если количество исправляемых ошибок равно 0, то ничего не исправляется.
     Иначе каждый синдром кода складывается с соответствующим ему лидером (нулевому синдрому соответсвует нулевой лидер, поэтому такое сложение не изменит матрицу).
     
-18. **void print(const vector<vector<int>>& G)** - Вывод матрицы в консоль;
+17. **void print(const vector<vector<int>>& G)** - Вывод матрицы в консоль;
     
-19. **vector<vector<int>> readMatrixFromFile(const string& filename)** - Чтение матрицы из файла.
+18. **vector<vector<int>> readMatrixFromFile(const string& filename)** - Чтение матрицы из файла.
 
 # Алгоритм исправления ошибок 
    1. Чтение из файла порождающей матрицы G и полученного сообщения GGot
