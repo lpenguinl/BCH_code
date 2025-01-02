@@ -26,8 +26,7 @@
 
    Если порождающая матрица задана в каноническом виде, то проверочная матрица может быть найдена путем транспонирования подматрицы G и добавления справа единичной матрицы порядка r:
 
-<div style="text-align:center">
-    <img width="242" alt="image" src="https://github.com/user-attachments/assets/b00f9a5a-bb29-4d09-8742-70648e29b813" />
+<div style="text-align:center" img width="242" alt="image" src="https://github.com/user-attachments/assets/b00f9a5a-bb29-4d09-8742-70648e29b813" />
 
 6. int findMinWt(const vector<vector<int>>& G) - нахождение веса Хэмминга матрицы G;
    Весом Хэмминга вектора c называется количество его ненулевых разрядов. Например, wt(1001011) = 4, wt(0000000) = 0.
