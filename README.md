@@ -12,6 +12,7 @@
 2. vector<vector<int>> transpose(const vector<vector<int>>& matrix) - Возвращает транспонированную матрицу matrix;
 3. void swapRows(vector<vector<int>>& matrix, int row1, int row2) - меняет строки row1 и row2 местами в матрице matrix;
 4. vector<vector<int>> toCanonicalForm(const vector<vector<int>>& originalMatrix) - приводит матрицу originalMatrix к каноническому виду (приведенно-ступенчатой форме);
+
    ![image](https://github.com/user-attachments/assets/3eeafe54-a2d7-4201-b58b-aa47b3c818a0)
 
 7. vector<vector<int>> findH(const vector<vector<int>>& G)
