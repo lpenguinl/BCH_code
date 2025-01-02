@@ -32,7 +32,7 @@
 <p align="center">
 <img width="242" alt="image" src="https://github.com/user-attachments/assets/b00f9a5a-bb29-4d09-8742-70648e29b813" />
 </p>
-6. **int findMinWt(const vector<vector<int>>& G)** - нахождение веса Хэмминга матрицы G;
+   6. **int findMinWt(const vector<vector<int>>& G)** - нахождение веса Хэмминга матрицы G;
    Весом Хэмминга вектора c называется количество его ненулевых разрядов. Например, wt(1001011) = 4, wt(0000000) = 0.
    
 7. **int hammingDistanceVec(const vector<int>& A, const vector<int>& B)** - Нахождение расстояния Хэмминга для матриц A и B;
@@ -41,9 +41,9 @@
     
 8. **int calculateAllHammingDistances(const vector<vector<int>>& matrix)** - Нахождение минимального расстояния Хэмминга между строками матрицы matrix;
    
-10. **int codeDistance(const vector<vector<int>>& matrix)** - Нвхождение кодового расстояния для матрицы matrix;
-   для нахождения кодового расстояния необходимо найти минимальный вес строк G и минимальное расстояние Хэмминга между всеми строками G. Тогда кодовое расстояние равно минимальному из этих значений.
-11. **int maxDetectableErrors(const vector<vector<int>>& matrix)** - Вычисление максимального количества обнаруживаемых ошибок;
+9. **int codeDistance(const vector<vector<int>>& matrix)** - Нвхождение кодового расстояния для матрицы matrix;
+    Для нахождения кодового расстояния необходимо найти минимальный вес строк G и минимальное расстояние Хэмминга между всеми строками G. Тогда кодовое расстояние равно минимальному из этих значений.
+10. **int maxDetectableErrors(const vector<vector<int>>& matrix)** - Вычисление максимального количества обнаруживаемых ошибок;
    Число обнаруживаемых ошибок связано с кодовым расстоянием данной формулой:
    <p align="center">
 <img width="150" alt="image" src="https://github.com/user-attachments/assets/8e0e455a-eeb7-4f45-8ffc-83cb984e2c82" />
