@@ -28,12 +28,12 @@
 
     <img width="242" alt="image" src="https://github.com/user-attachments/assets/b00f9a5a-bb29-4d09-8742-70648e29b813" />
 
-6. int findMinWt(const vector<vector<int>>& G) - нахождение веса Хэмминга;
+6. int findMinWt(const vector<vector<int>>& G) - нахождение веса Хэмминга матрицы G;
    Весом Хэмминга вектора c называется количество его ненулевых разрядов. Например, wt(1001011) = 4, wt(0000000) = 0.
-7. int hammingDistanceVec(const vector<int>& A, const vector<int>& B) - Нахождение расстояния Хэмминга;
+7. int hammingDistanceVec(const vector<int>& A, const vector<int>& B) - Нахождение расстояния Хэмминга для матриц A и B;
     Расстоянием Хэмминга d(c1,c2) между двумя векторами c1 и c2 Иназывается вес их разности d(c1,c2) = wt(c1–c2). Например, d(1001, 1011) = wt(0010).
     Видно, что расстояние Хэмминга равно количеству попарно несовпадающих разрядов векторов.
-8. int calculateAllHammingDistances(const vector<vector<int>>& matrix) - Нахождение минимального расстояния Хэмминга между строками матрицы
+8. int calculateAllHammingDistances(const vector<vector<int>>& matrix) - Нахождение минимального расстояния Хэмминга между строками матрицы matrix
 17. int codeDistance(const vector<vector<int>>& matrix)
 18. int maxDetectableErrors(const vector<vector<int>>& matrix)
 19. int correctableErrors(const vector<vector<int>>& matrix)
@@ -44,3 +44,17 @@
 24. vector<vector<int>> fixErrors(vector<vector<int>>& GNew, const vector<vector<int>>& H)
 25. void print(const vector<vector<int>>& G)
 26. vector<vector<int>> readMatrixFromFile(const string& filename)
+
+# Алгоритм исправления ошибок 
+   1. Чтение из файла порождающей матрицы G и полученного сообщения GGot
+   2. Приведение порождающей матрицы G к каноничному виду
+   3. Нахождение проверочной матрицы H
+   4. Вычисление расстояния Хэмминга
+   5. Вычисление кодового расстояния
+   6. Вычисление максимального количества обнаруживаемых ошибок
+   7. Вычисление максимального количества исправляемых ошибок
+   8. Нахождение синдромов
+   9. Нахождение лидеров для каждого синдрома 
+   10. Исправление ошибок, если это возможно
+
+
