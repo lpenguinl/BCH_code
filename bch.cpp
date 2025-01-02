@@ -171,19 +171,6 @@ int findMinWt(const vector<vector<int>>& G) {
     return minCounter;
 }
 
-//расстояние Хэминга
-int hammingDistance(int a, int b) {
-    int xorResult = a ^ b;
-    int distance = 0;
-
-    while (xorResult > 0) {
-        distance += xorResult & 1;
-        xorResult >>= 1;
-    }
-
-    return distance;
-}
-
 //Расстояние Хэмминга для векторов одинаковой длины
 int hammingDistanceVec(const vector<int>& A, const vector<int>& B) {
     int distance = 0;
@@ -253,12 +240,6 @@ vector<int> codeSyndrome(const vector<int>& word, const vector<vector<int>>& H) 
 void multiplyRow(vector<int>& row, int scalar) {
     for (int& elem : row) {
         elem = (elem * scalar) % 2;
-    }
-}
-//Функция сложения строк по модулю 2
-void addRows(vector<int>& dest, const vector<int>& src) {
-    for (size_t i = 0; i < dest.size(); ++i) {
-        dest[i] = (dest[i] + src[i]) % 2;
     }
 }
 
@@ -343,31 +324,31 @@ void print(const vector<vector<int>>& G) {
 vector<vector<int>> readMatrixFromFile(const string& filename) {
     ifstream file(filename);
     if (!file.is_open()) {
-        std::cerr << "Error: Could not open file: " << filename << endl;
+        cerr << "Error: Could not open file: " << filename << endl;
         return {}; // Возвращаем пустую матрицу, если не удалось открыть файл
     }
 
     int numRows, numCols;
     if (!(file >> numRows >> numCols)) {
-        std::cerr << "Error: Could not read dimensions from file." << endl;
+        cerr << "Error: Could not read dimensions from file." << endl;
         file.close();
         return {};
     }
 
-    vector<std::vector<int>> matrix(numRows, std::vector<int>(numCols));
-    std::string line;
-    std::getline(file, line); // Читаем пустую строку после измерений
+    vector<vector<int>> matrix(numRows, vector<int>(numCols));
+    string line;
+    getline(file, line); // Читаем пустую строку после измерений
 
     for (int i = 0; i < numRows; ++i) {
         if (!getline(file, line)) {
-            std::cerr << "Error: Could not read line " << i + 1 << " from the file." << std::endl;
+            cerr << "Error: Could not read line " << i + 1 << " from the file." << endl;
             file.close();
             return {};
         }
-        std::istringstream iss(line);
+        istringstream iss(line);
         for (int j = 0; j < numCols; ++j) {
             if (!(iss >> matrix[i][j])) {
-                std::cerr << "Error: Could not read matrix value at row " << i + 1 << " column " << j + 1 << std::endl;
+                cerr << "Error: Could not read matrix value at row " << i + 1 << " column " << j + 1 << endl;
                 file.close();
                 return {};
             }
@@ -443,6 +424,5 @@ int main() {
     else {
         cout << "Errors cannot be fixed";
     }
-    
     return 0;
 }
