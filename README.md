@@ -20,7 +20,9 @@
 
 5. vector<vector<int>> findH(const vector<vector<int>>& G) - Нахождение проверочной матрицы H;
 
-   ![image](https://github.com/user-attachments/assets/d6dd2652-1817-440e-a70d-e4d4be3fd89e)
+<p align="center">
+<img width="150" alt="image" src="https://github.com/user-attachments/assets/d6dd2652-1817-440e-a70d-e4d4be3fd89e" />
+</p>
 
    Связь между проверочной матрицей H и порождающей матрицей G. Знак T обозначает транспонирование, а 0 – нулевая матрица порядка k.
    Проверочная матрица H имеет размеры r*n.
