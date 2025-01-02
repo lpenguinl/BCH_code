@@ -67,26 +67,29 @@
 12. **vector<int> codeSyndrome(const vector<int>& word, const vector<vector<int>>& H)** - Нахождение синдромов кода;
 
        Для обнаружения и исправления ошибок используется синдромный метод декодирования.
+    
        Синдром - Результат умножения принятого кодового слова на транспонированную матрицу H. Если синдром равен нулю, то ошибок нет.
    
-13. **map<vector<int>, vector<int>> findSyndromeLeaders(const vector<vector<int>>& H)** - нахождение лидера для каждого синдрома;
+14. **map<vector<int>, vector<int>> findSyndromeLeaders(const vector<vector<int>>& H)** - нахождение лидера для каждого синдрома;
 
        Класс смежности - множество искаженных кодовых слов, имеющих один и тот же синдром.
-       Лидер синдрома - это кодовое слово, имеющее наименьший вес Хэмминга среди всех элементов этого класса. 
+    
+       Лидер синдрома - это кодовое слово, имеющее наименьший вес Хэмминга среди всех элементов этого класса.
+    
        Выбор лидера синдрома позволяет допределить, какая ошибка наиболее вероятно произошла во время передачи.
    
-14. **void multiplyRow(vector<int>& row, int scalar)** - Умножение строки на скаляр по модулю 2;
+16. **void multiplyRow(vector<int>& row, int scalar)** - Умножение строки на скаляр по модулю 2;
     
-15. **vector<int> vectorAddMod2(const vector<int>& A, const vector<int>& B)** - Сложение матриц по модулю 2;
+17. **vector<int> vectorAddMod2(const vector<int>& A, const vector<int>& B)** - Сложение матриц по модулю 2;
     
-16. **vector<vector<int>> fixErrors(vector<vector<int>>& GGot, const vector<vector<int>>& H)** - Исправление ошибок в переданном сообщение GGot;
+18. **vector<vector<int>> fixErrors(vector<vector<int>>& GGot, const vector<vector<int>>& H)** - Исправление ошибок в переданном сообщение GGot;
 
     Если количество исправляемых ошибок равно 0, то ничего не исправляется.
     Иначе каждый синдром кода складывается с соответствующим ему лидером (нулевому синдрому соответсвует нулевой лидер, поэтому такое сложение не изменит матрицу).
     
-17. **void print(const vector<vector<int>>& G)** - Вывод матрицы в консоль;
+19. **void print(const vector<vector<int>>& G)** - Вывод матрицы в консоль;
     
-18. **vector<vector<int>> readMatrixFromFile(const string& filename)** - Чтение матрицы из файла.
+20. **vector<vector<int>> readMatrixFromFile(const string& filename)** - Чтение матрицы из файла.
 
 # Алгоритм исправления ошибок 
    1. Чтение из файла порождающей матрицы G и полученного сообщения GGot
