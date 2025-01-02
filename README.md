@@ -17,18 +17,27 @@
 
    Матрица G состоит из единичной матрицы порядка k и G* – проверочной части порождающей матрицы размером k(n–k).
 
-7. vector<vector<int>> findH(const vector<vector<int>>& G)
-8. int findMinWt(const vector<vector<int>>& G)
-9. int hammingDistance(int a, int b)
-10. int hammingDistanceVec(const vector<int>& A, const vector<int>& B)
-11. int calculateAllHammingDistances(const vector<vector<int>>& matrix)
-12. int codeDistance(const vector<vector<int>>& matrix)
-13. int maxDetectableErrors(const vector<vector<int>>& matrix)
-14. int correctableErrors(const vector<vector<int>>& matrix)
-15. vector<int> codeSyndrome(const vector<int>& word, const vector<vector<int>>& H)
-16. void addRows(vector<int>& dest, const vector<int>& src)
-17. map<vector<int>, vector<int>> findSyndromeLeaders(const vector<vector<int>>& H)
-18. vector<int> vectorAddMod2(const vector<int>& A, const vector<int>& B)
-19. vector<vector<int>> fixErrors(vector<vector<int>>& GNew, const vector<vector<int>>& H)
-20. void print(const vector<vector<int>>& G)
-21. vector<vector<int>> readMatrixFromFile(const string& filename)
+7. vector<vector<int>> findH(const vector<vector<int>>& G) - Нахождение проверочной матрицы H;
+
+   ![image](https://github.com/user-attachments/assets/d6dd2652-1817-440e-a70d-e4d4be3fd89e)
+
+   Связь между проверочной матрицей H и порождающей матрицей G. Знак T обозначает транспонирование, а 0 – нулевая матрица порядка k.
+   Проверочная матрица H имеет размеры r*n.
+
+   Если порождающая матрица задана в каноническом виде, то проверочная матрица может быть найдена путем транспонирования подматрицы G и добавления справа единичной матрицы порядка r:
+   <img width="242" alt="image" src="https://github.com/user-attachments/assets/b00f9a5a-bb29-4d09-8742-70648e29b813" />
+
+9. int findMinWt(const vector<vector<int>>& G)
+10. int hammingDistance(int a, int b)
+11. int hammingDistanceVec(const vector<int>& A, const vector<int>& B)
+12. int calculateAllHammingDistances(const vector<vector<int>>& matrix)
+13. int codeDistance(const vector<vector<int>>& matrix)
+14. int maxDetectableErrors(const vector<vector<int>>& matrix)
+15. int correctableErrors(const vector<vector<int>>& matrix)
+16. vector<int> codeSyndrome(const vector<int>& word, const vector<vector<int>>& H)
+17. void addRows(vector<int>& dest, const vector<int>& src)
+18. map<vector<int>, vector<int>> findSyndromeLeaders(const vector<vector<int>>& H)
+19. vector<int> vectorAddMod2(const vector<int>& A, const vector<int>& B)
+20. vector<vector<int>> fixErrors(vector<vector<int>>& GNew, const vector<vector<int>>& H)
+21. void print(const vector<vector<int>>& G)
+22. vector<vector<int>> readMatrixFromFile(const string& filename)
