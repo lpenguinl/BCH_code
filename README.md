@@ -32,27 +32,32 @@
 <p align="center">
 <img width="242" alt="image" src="https://github.com/user-attachments/assets/b00f9a5a-bb29-4d09-8742-70648e29b813" />
 </p>
-6. int findMinWt(const vector<vector<int>>& G) - нахождение веса Хэмминга матрицы G;
+6. **int findMinWt(const vector<vector<int>>& G)** - нахождение веса Хэмминга матрицы G;
    Весом Хэмминга вектора c называется количество его ненулевых разрядов. Например, wt(1001011) = 4, wt(0000000) = 0.
-7. int hammingDistanceVec(const vector<int>& A, const vector<int>& B) - Нахождение расстояния Хэмминга для матриц A и B;
+7. **int hammingDistanceVec(const vector<int>& A, const vector<int>& B)** - Нахождение расстояния Хэмминга для матриц A и B;
     Расстоянием Хэмминга d(c1,c2) между двумя векторами c1 и c2 Иназывается вес их разности d(c1,c2) = wt(c1–c2). Например, d(1001, 1011) = wt(0010).
     Видно, что расстояние Хэмминга равно количеству попарно несовпадающих разрядов векторов.
-8. int calculateAllHammingDistances(const vector<vector<int>>& matrix) - Нахождение минимального расстояния Хэмминга между строками матрицы matrix;
-9. int codeDistance(const vector<vector<int>>& matrix) - Нвхождение кодового расстояния для матрицы matrix;
+8. **int calculateAllHammingDistances(const vector<vector<int>>& matrix)** - Нахождение минимального расстояния Хэмминга между строками матрицы matrix;
+9. **int codeDistance(const vector<vector<int>>& matrix)** - Нвхождение кодового расстояния для матрицы matrix;
    для нахождения кодового расстояния необходимо найти минимальный вес строк G и минимальное расстояние Хэмминга между всеми строками G. Тогда кодовое расстояние равно минимальному из этих значений.
-18. int maxDetectableErrors(const vector<vector<int>>& matrix) - Вычисление максимального количества обнаруживаемых ошибок;
+10. **int maxDetectableErrors(const vector<vector<int>>& matrix)** - Вычисление максимального количества обнаруживаемых ошибок;
+   Число обнаруживаемых ошибок связано с кодовым расстоянием данной формулой:
    <p align="center">
+<img width="150" alt="image" src="https://github.com/user-attachments/assets/8e0e455a-eeb7-4f45-8ffc-83cb984e2c82" />
+</p>
+11. **int correctableErrors(const vector<vector<int>>& matrix)** - Вычисление максимального количества исправляемых ошибок;
+   Число исправляемых ошибок связано с кодовым расстоянием данной формулой:
+<p align="center">
 <img width="150" alt="image" src="https://github.com/user-attachments/assets/3bd90ede-b233-4732-bd01-04b1f206a617" />
 </p>
 
-19. int correctableErrors(const vector<vector<int>>& matrix)
-20. vector<int> codeSyndrome(const vector<int>& word, const vector<vector<int>>& H)
-21. void addRows(vector<int>& dest, const vector<int>& src)
-22. map<vector<int>, vector<int>> findSyndromeLeaders(const vector<vector<int>>& H)
-23. vector<int> vectorAddMod2(const vector<int>& A, const vector<int>& B)
-24. vector<vector<int>> fixErrors(vector<vector<int>>& GNew, const vector<vector<int>>& H)
-25. void print(const vector<vector<int>>& G)
-26. vector<vector<int>> readMatrixFromFile(const string& filename)
+21. vector<int> codeSyndrome(const vector<int>& word, const vector<vector<int>>& H)
+22. void addRows(vector<int>& dest, const vector<int>& src)
+23. map<vector<int>, vector<int>> findSyndromeLeaders(const vector<vector<int>>& H)
+24. vector<int> vectorAddMod2(const vector<int>& A, const vector<int>& B)
+25. vector<vector<int>> fixErrors(vector<vector<int>>& GNew, const vector<vector<int>>& H)
+26. void print(const vector<vector<int>>& G)
+27. vector<vector<int>> readMatrixFromFile(const string& filename)
 
 # Алгоритм исправления ошибок 
    1. Чтение из файла порождающей матрицы G и полученного сообщения GGot
