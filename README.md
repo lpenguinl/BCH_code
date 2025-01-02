@@ -15,7 +15,6 @@
 <p align="center">
 <img width="150" alt="image" src="https://github.com/user-attachments/assets/474e72da-bb5f-4dec-9253-9beddb7becbb" />
 </p>
-
    Матрица G состоит из единичной матрицы порядка k и G* – проверочной части порождающей матрицы размером k(n–k).
    n - количество столбцов, k - количество строк.
 
@@ -24,7 +23,6 @@
 <p align="center">
 <img width="150" alt="image" src="https://github.com/user-attachments/assets/d6dd2652-1817-440e-a70d-e4d4be3fd89e" />
 </p>
-
    Связь между проверочной матрицей H и порождающей матрицей G. Знак T обозначает транспонирование, а 0 – нулевая матрица порядка k.
    Проверочная матрица H имеет размеры r*n.
 
