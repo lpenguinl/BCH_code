@@ -105,18 +105,17 @@
 
 #Пример работы агоритма
 1. На вход дана порождающая матрица G:
-   
-      <p align="center">
-<img width="150" alt="image" src="https://github.com/user-attachments/assets/3a5d0635-d017-4df9-b743-a0b4d256446e" />
+   <p align="center">
+<img width="150" alt="image" src="https://github.com/user-attachments/assets/2d7661a4-0921-4ccd-b459-6a1106c3b269" />
 </p>
 
    И матрица полученного сообщения GGot:
          <p align="center">
-<img width="150" alt="image" src="https://github.com/user-attachments/assets/0be7df14-01d6-4d2e-9cb4-0c0acd913043" />
+<img width="150" alt="image" src="https://github.com/user-attachments/assets/8c861aca-5720-4e5f-8af8-b333b7758c22" />
 </p>
 
 2. Приводим матрицу к каноничному виду (см. пункт 4 в описании методов) с помощью элементарных преобразований:
 
  <p align="center">
-<img width="150" alt="image" src="https://github.com/user-attachments/assets/426297d0-28d4-40dc-8be2-d49ede3be977" />
+<img width="150" alt="image" src="https://github.com/user-attachments/assets/50e39daf-e7ad-4647-9a5b-1155ce9d57a6" />
 </p>
