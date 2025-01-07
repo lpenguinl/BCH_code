@@ -105,6 +105,7 @@
 
 #Пример работы агоритма
 1. На вход дана порождающая матрица G:
+   
       <p align="center">
 <img width="150" alt="image" src="https://github.com/user-attachments/assets/3a5d0635-d017-4df9-b743-a0b4d256446e" />
 </p>
