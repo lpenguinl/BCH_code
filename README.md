@@ -103,4 +103,13 @@
    9. Нахождение лидеров для каждого синдрома проверочной матрицы H
    10. Исправление ошибок, если это возможно, в матрице GGot
 
+#Пример работы агоритма
+1. На вход дана порождающая матрица G:
+      <p align="center">
+<img width="150" alt="image" src="https://github.com/user-attachments/assets/3a5d0635-d017-4df9-b743-a0b4d256446e" />
+</p>
 
+   И матрица полученного сообщения GGot:
+         <p align="center">
+<img width="150" alt="image" src="https://github.com/user-attachments/assets/c4642992-99d6-471f-b9c3-39619ef3a727" />
+</p>
