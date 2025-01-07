@@ -308,6 +308,22 @@ void print(const vector<vector<int>>& G) {
     }
 }
 
+bool isMatrixAllZeros(const vector<vector<int>>& matrix) {
+
+    if (matrix.empty()) {
+        return true;
+    }
+
+    for (const auto& row : matrix) {
+        for (int element : row) {
+            if (element != 0) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 vector<vector<int>> readMatrixFromFile(const string& filename) {
     ifstream file(filename);
     if (!file.is_open()) {
@@ -402,14 +418,20 @@ int main() {
     cout << endl;
 
     // Если количество исправляемых ошибок больше 0, то исправляем их и выводим полученную матрицу, которая будет совпадать с G
-    if (correctableErrors(G) > 0) {
+
+    if ((correctableErrors(G) > 0) && (equal == false)) {
         vector<vector<int>> fixed = fixErrors(GGot, H);
 
         cout << "Corrected code:" << endl;
         print(fixed);
     }
+    else if (equal == true) {
+        cout << "There is no errors";
+    }
     else {
         cout << "Errors cannot be fixed";
     }
+    return 0;
+}
     return 0;
 }
