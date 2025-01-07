@@ -114,3 +114,9 @@
          <p align="center">
 <img width="150" alt="image" src="https://github.com/user-attachments/assets/0be7df14-01d6-4d2e-9cb4-0c0acd913043" />
 </p>
+
+2. Приводим матрицу к каноничному виду (см. пункт 4 в описании методов) с помощью элементарных преобразований:
+
+ <p align="center">
+<img width="150" alt="image" src="https://github.com/user-attachments/assets/426297d0-28d4-40dc-8be2-d49ede3be977" />
+</p>
