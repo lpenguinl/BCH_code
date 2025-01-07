@@ -111,6 +111,5 @@
 
    И матрица полученного сообщения GGot:
          <p align="center">
-<img width="150" alt="image" src="https://github.com/user-attachments/assets/0be7df14-01d6-4d2e-9cb4-0c0acd913043
-" />
+<img width="150" alt="image" src="https://github.com/user-attachments/assets/0be7df14-01d6-4d2e-9cb4-0c0acd913043" />
 </p>
