@@ -9,6 +9,7 @@
 
 using namespace std;
 
+// Умножение матриц
 vector<vector<int>> matrixMultiply(const vector<vector<int>>& A, const vector<vector<int>>& B) {
     int rows1 = A.size();
     int cols1 = A[0].size();
@@ -20,18 +21,13 @@ vector<vector<int>> matrixMultiply(const vector<vector<int>>& A, const vector<ve
         for (int j = 0; j < cols2; ++j) {
             for (int k = 0; k < cols1; ++k) {
                 result[i][j] += (A[i][k] * B[k][j]);
+                result[i][j] %= 2;
             }
         }
     }
-    for (int i = 0; i < result.size(); i++) {
-        for (int j = 0; j < result[0].size(); j++) {
-            result[i][j] %= 2;
-        }
-    }
-
     return result;
 }
-
+// Вычисление транспонированной матрицы
 vector<vector<int>> transpose(const vector<vector<int>>& matrix) {
     int rows = matrix.size();
     int cols = matrix[0].size();
@@ -47,10 +43,12 @@ vector<vector<int>> transpose(const vector<vector<int>>& matrix) {
     return transposed;
 }
 
+// Функция для обмена строк
 void swapRows(vector<vector<int>>& matrix, int row1, int row2) {
     swap(matrix[row1], matrix[row2]);
 }
 
+// перевод в каноничную форму
 vector<vector<int>> toCanonicalForm(const vector<vector<int>>& originalMatrix) {
     vector<vector<int>> matrix = originalMatrix;
     int numRows = matrix.size();
@@ -60,11 +58,12 @@ vector<vector<int>> toCanonicalForm(const vector<vector<int>>& originalMatrix) {
     }
 
     int numCols = matrix[0].size();
-    int lead = 0; 
+    int lead = 0; // Текущая ведущая позиция
 
     for (int row = 0; row < numRows; ++row) {
         if (lead >= numCols) break;
 
+        // Находим ведущий элемент
         int pivotRow = row;
         while (pivotRow < numRows && matrix[pivotRow][lead] == 0) {
             pivotRow++;
@@ -75,10 +74,12 @@ vector<vector<int>> toCanonicalForm(const vector<vector<int>>& originalMatrix) {
             continue;
         }
 
+        // Переставляем строки
         if (pivotRow != row) {
             swapRows(matrix, row, pivotRow);
         }
 
+        // Делим текущую строку на ведущий элемент
         double pivot = matrix[row][lead];
         if (pivot != 1.0) {
             for (int col = 0; col < numCols; col++) {
@@ -86,6 +87,7 @@ vector<vector<int>> toCanonicalForm(const vector<vector<int>>& originalMatrix) {
             }
         }
 
+        // Обнуляем остальные элементы столбца
         for (int i = 0; i < numRows; ++i) {
             if (i != row) {
                 double factor = matrix[i][lead];
@@ -97,6 +99,7 @@ vector<vector<int>> toCanonicalForm(const vector<vector<int>>& originalMatrix) {
         lead++;
     }
 
+    //Заменяем -1 на 1 
     for (int i = 0; i < matrix.size(); i++) {
         for (int j = 0; j < matrix[0].size(); j++) {
             if (matrix[i][j] == -1) {
@@ -107,7 +110,7 @@ vector<vector<int>> toCanonicalForm(const vector<vector<int>>& originalMatrix) {
 
     return matrix;
 }
-
+// Нахождение проверочной матрицы H
 vector<vector<int>> findH(const vector<vector<int>>& G) {
     int k = G.size();
     int n = G[0].size();
@@ -132,7 +135,7 @@ vector<vector<int>> findH(const vector<vector<int>>& G) {
 
     return H;
 }
-
+// Вес Хэмминга
 int hammingWeight(const vector<int>& a) {
     int weight = 0;
 
@@ -143,7 +146,7 @@ int hammingWeight(const vector<int>& a) {
 
     return weight;
 }
-
+//Вес кода
 int findMinWt(const vector<vector<int>>& G) {
     int rows = G.size();
     int cols = G[0].size();
@@ -163,6 +166,7 @@ int findMinWt(const vector<vector<int>>& G) {
     return minCounter;
 }
 
+//Расстояние Хэмминга для векторов одинаковой длины
 int hammingDistanceVec(const vector<int>& A, const vector<int>& B) {
     int distance = 0;
 
@@ -174,7 +178,7 @@ int hammingDistanceVec(const vector<int>& A, const vector<int>& B) {
 
     return distance;
 }
-
+// Расстояние Хэмминга для кода
 int calculateAllHammingDistances(const vector<vector<int>>& matrix) {
     int numRows = matrix.size();
     int cols = matrix[0].size();
@@ -188,7 +192,7 @@ int calculateAllHammingDistances(const vector<vector<int>>& matrix) {
 
     return minHamming;
 }
-
+// кодовое расстояние
 int codeDistance(const vector<vector<int>>& matrix) {
     int Weight = findMinWt(matrix);
     int hamming = calculateAllHammingDistances(matrix);
@@ -196,6 +200,7 @@ int codeDistance(const vector<vector<int>>& matrix) {
     return min(Weight, hamming);
 }
 
+// максимальное количество обнаруживаемых ошибок
 int maxDetectableErrors(const vector<vector<int>>& matrix) {
     int distance = codeDistance(matrix);
 
@@ -205,7 +210,7 @@ int maxDetectableErrors(const vector<vector<int>>& matrix) {
 
     return distance - 1;
 }
-
+// максимальное количество исправляемых ошибок
 int correctableErrors(const vector<vector<int>>& matrix) {
     int distance = codeDistance(matrix);
 
@@ -216,6 +221,7 @@ int correctableErrors(const vector<vector<int>>& matrix) {
     return ((distance - 1) / 2);
 }
 
+// Синдром - Результат умножения принятого кодового слова на проверочную матрицу H^T.
 vector<int> codeSyndrome(const vector<int>& word, const vector<vector<int>>& H) {
     vector<vector<int>> word_matrix;
 
@@ -225,12 +231,14 @@ vector<int> codeSyndrome(const vector<int>& word, const vector<vector<int>>& H) 
     return syndrome_matrix[0];
 }
 
+// Умножение строки на скаляр (mod 2)
 void multiplyRow(vector<int>& row, int scalar) {
     for (int& elem : row) {
         elem = (elem * scalar) % 2;
     }
 }
 
+// Функция для нахождения лидеров синдромов
 map<vector<int>, vector<int>> findSyndromeLeaders(const vector<vector<int>>& H) {
     int n;
     if (H.size() > 0) {
@@ -259,7 +267,7 @@ map<vector<int>, vector<int>> findSyndromeLeaders(const vector<vector<int>>& H) 
 
     return syndrome_leaders;
 }
-
+// Возвращает значение сложения векторов по модулю 2
 vector<int> vectorAddMod2(const vector<int>& A, const vector<int>& B) {
     if (A.size() != B.size()) {
         cerr << "Error: Vectors must have the same size for addition." << endl;
@@ -272,12 +280,8 @@ vector<int> vectorAddMod2(const vector<int>& A, const vector<int>& B) {
 
     return result;
 }
-
+// Исправление ошибок
 vector<vector<int>> fixErrors(vector<vector<int>>& GNew, const vector<vector<int>>& H) {
-    if (correctableErrors(GNew) < 1) {
-        cout << "Errors cannot be corrected";
-        return GNew;
-    }
 
     vector<vector<int>> syndromeMatrix;
 
@@ -298,7 +302,7 @@ vector<vector<int>> fixErrors(vector<vector<int>>& GNew, const vector<vector<int
 
     return GNew;
 }
-
+//Вывод матрицы
 void print(const vector<vector<int>>& G) {
     for (const auto& row : G) {
         for (int val : row) {
@@ -308,6 +312,7 @@ void print(const vector<vector<int>>& G) {
     }
 }
 
+// Метод, проверяющий, все ли элементы матрицы равны нулю
 bool isMatrixAllZeros(const vector<vector<int>>& matrix) {
 
     if (matrix.empty()) {
@@ -323,12 +328,12 @@ bool isMatrixAllZeros(const vector<vector<int>>& matrix) {
     }
     return true;
 }
-
+// Функция для чтения матрицы из файла
 vector<vector<int>> readMatrixFromFile(const string& filename) {
     ifstream file(filename);
     if (!file.is_open()) {
         cerr << "Error: Could not open file: " << filename << endl;
-        return {}; 
+        return {}; // Возвращаем пустую матрицу, если не удалось открыть файл
     }
 
     int numRows, numCols;
@@ -340,7 +345,7 @@ vector<vector<int>> readMatrixFromFile(const string& filename) {
 
     vector<vector<int>> matrix(numRows, vector<int>(numCols));
     string line;
-    getline(file, line); 
+    getline(file, line); // Читаем пустую строку после измерений
 
     for (int i = 0; i < numRows; ++i) {
         if (!getline(file, line)) {
@@ -401,11 +406,12 @@ int main() {
     cout << endl;
 
     map<vector<int>, vector<int>> leaders = findSyndromeLeaders(H);
-
+    int counter = 1;
     // Выводим лидеры синдромов
     cout << "Syndrome leaders:" << endl;
     for (const auto& pair : leaders) {
-        cout << "Syndrome: ";
+        cout << counter << ". " << "Syndrome: ";
+        counter++;
         for (int val : pair.first) {
             cout << val << " ";
         }
@@ -418,6 +424,7 @@ int main() {
     cout << endl;
 
     // Если количество исправляемых ошибок больше 0, то исправляем их и выводим полученную матрицу, которая будет совпадать с G
+    bool equal = isMatrixAllZeros(syndromeMatrix);
 
     if ((correctableErrors(G) > 0) && (equal == false)) {
         vector<vector<int>> fixed = fixErrors(GGot, H);
@@ -431,7 +438,5 @@ int main() {
     else {
         cout << "Errors cannot be fixed";
     }
-    return 0;
-}
     return 0;
 }
